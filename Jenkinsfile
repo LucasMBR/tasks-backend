@@ -36,8 +36,8 @@ pipeline{
         }
         stage('API Test'){
             steps{
-                    git 'https://github.com/LucasMBR/tasks-api-test'
-                    sh 'mvn clean test verify'
+                git 'https://github.com/LucasMBR/tasks-api-test'
+                sh 'mvn clean test verify'
             }
         }
         stage('Deploy Frontend'){
@@ -51,10 +51,9 @@ pipeline{
         }
         stage('Functional Test'){
             steps{
-                dir('functional-test'){
-                    git 'https://github.com/LucasMBR/tasks-functional-tests'
-                    sh 'mvn clean package'
-                }
+                git 'https://github.com/LucasMBR/tasks-functional-tests'
+                sh 'mvn clean package'
+                
             }
         }
     }
