@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Unit tests'){
             steps{
-                sh 'mvn test'
+                sh 'mvn clean test verify'
             }
         }
         stage('SOnarAnalysis'){
