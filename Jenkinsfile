@@ -49,6 +49,14 @@ pipeline{
                 }
             }
         }
+        stage('Functional Test'){
+            steps{
+                dir('functional-test'){
+                    git 'https://github.com/LucasMBR/tasks-functional-tests'
+                    sh 'mvn clean package'
+                }
+            }
+        }
     }
 }
 
