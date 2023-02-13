@@ -11,7 +11,7 @@ pipeline{
                 sh 'mvn clean test verify'
             }
         }
-        stage('SOnarAnalysis'){
+        stage('Sonar Analysis'){
             environment{
                 scannerHome = tool 'SONAR_SCANNER'
             }
